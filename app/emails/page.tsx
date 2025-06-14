@@ -1,7 +1,7 @@
 import React from "react";
 
 export default async function EmailsPage() {
-  // Replace NEXT_PUBLIC_SITE_URL with your actual domain if needed
+  // Replace NEXT_PUBLIC_SITE_URL with full domain if necessary
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/api/emails`, {
     cache: "no-cache"
   });
@@ -19,7 +19,7 @@ export default async function EmailsPage() {
 
   return (
     <div className="p-4 space-y-4">
-      <h1 className="text-2xl font-bold">Latest 5 Emails</h1>
+      <h1 className="text-2xl font-bold">Latest 10 Emails</h1>
       {emails.length === 0 ? (
         <p>No emails found.</p>
       ) : (
